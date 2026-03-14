@@ -1,0 +1,301 @@
+{
+  "seed": 42,
+  "count": 5,
+  "samples": [
+    {
+      "sampled_style": {
+        "прическа": "короткая прямые",
+        "цвет волос": "рыжий",
+        "аксесуар": "солнцезащитные очки",
+        "одежда": "футболка с круглым вырезом",
+        "цвет одежды": "синий"
+      },
+      "sampled_categories": [
+        {
+          "category": "прическа",
+          "value": "короткая прямые",
+          "count": 11,
+          "prior_probability": 0.14285714285714285,
+          "mle_probability": 0.22,
+          "bayesian_probability": 0.21052631578947367
+        },
+        {
+          "category": "цвет волос",
+          "value": "рыжий",
+          "count": 8,
+          "prior_probability": 0.16666666666666666,
+          "mle_probability": 0.16,
+          "bayesian_probability": 0.16071428571428573
+        },
+        {
+          "category": "аксесуар",
+          "value": "солнцезащитные очки",
+          "count": 17,
+          "prior_probability": 0.3333333333333333,
+          "mle_probability": 0.34,
+          "bayesian_probability": 0.33962264150943394
+        },
+        {
+          "category": "одежда",
+          "value": "футболка с круглым вырезом",
+          "count": 19,
+          "prior_probability": 0.25,
+          "mle_probability": 0.38,
+          "bayesian_probability": 0.37037037037037035
+        },
+        {
+          "category": "цвет одежды",
+          "value": "синий",
+          "count": 5,
+          "prior_probability": 0.125,
+          "mle_probability": 0.1,
+          "bayesian_probability": 0.10344827586206896
+        }
+      ],
+      "mle_probability": 0.00045478400000000023,
+      "mle_probability_scientific": "4.547840e-4",
+      "mle_log_probability": -7.6956879770057665,
+      "bayesian_probability": 0.0004402678785447682,
+      "bayesian_probability_scientific": "4.402679e-4",
+      "bayesian_log_probability": -7.728127201430084,
+      "bayesian_model": "dirichlet_posterior_predictive",
+      "alpha": 1.0
+    },
+    {
+      "sampled_style": {
+        "прическа": "короткая курчавые",
+        "цвет волос": "серебристо серый",
+        "аксесуар": "солнцезащитные очки",
+        "одежда": "худи",
+        "цвет одежды": "зеленый"
+      },
+      "sampled_categories": [
+        {
+          "category": "прическа",
+          "value": "короткая курчавые",
+          "count": 7,
+          "prior_probability": 0.14285714285714285,
+          "mle_probability": 0.14,
+          "bayesian_probability": 0.14035087719298245
+        },
+        {
+          "category": "цвет волос",
+          "value": "серебристо серый",
+          "count": 24,
+          "prior_probability": 0.16666666666666666,
+          "mle_probability": 0.48,
+          "bayesian_probability": 0.44642857142857145
+        },
+        {
+          "category": "аксесуар",
+          "value": "солнцезащитные очки",
+          "count": 17,
+          "prior_probability": 0.3333333333333333,
+          "mle_probability": 0.34,
+          "bayesian_probability": 0.33962264150943394
+        },
+        {
+          "category": "одежда",
+          "value": "худи",
+          "count": 7,
+          "prior_probability": 0.25,
+          "mle_probability": 0.14,
+          "bayesian_probability": 0.14814814814814814
+        },
+        {
+          "category": "цвет одежды",
+          "value": "зеленый",
+          "count": 8,
+          "prior_probability": 0.125,
+          "mle_probability": 0.16,
+          "bayesian_probability": 0.15517241379310345
+        }
+      ],
+      "mle_probability": 0.0005117952000000002,
+      "mle_probability_scientific": "5.117952e-4",
+      "mle_log_probability": -7.577586012946106,
+      "bayesian_probability": 0.0004891865317164089,
+      "bayesian_probability_scientific": "4.891865e-4",
+      "bayesian_log_probability": -7.622766685772258,
+      "bayesian_model": "dirichlet_posterior_predictive",
+      "alpha": 1.0
+    },
+    {
+      "sampled_style": {
+        "прическа": "длинные прямые",
+        "цвет волос": "серебристо серый",
+        "аксесуар": "круглые очки",
+        "одежда": "футболка с круглым вырезом",
+        "цвет одежды": "зеленый"
+      },
+      "sampled_categories": [
+        {
+          "category": "прическа",
+          "value": "длинные прямые",
+          "count": 23,
+          "prior_probability": 0.14285714285714285,
+          "mle_probability": 0.46,
+          "bayesian_probability": 0.42105263157894735
+        },
+        {
+          "category": "цвет волос",
+          "value": "серебристо серый",
+          "count": 24,
+          "prior_probability": 0.16666666666666666,
+          "mle_probability": 0.48,
+          "bayesian_probability": 0.44642857142857145
+        },
+        {
+          "category": "аксесуар",
+          "value": "круглые очки",
+          "count": 22,
+          "prior_probability": 0.3333333333333333,
+          "mle_probability": 0.44,
+          "bayesian_probability": 0.4339622641509434
+        },
+        {
+          "category": "одежда",
+          "value": "футболка с круглым вырезом",
+          "count": 19,
+          "prior_probability": 0.25,
+          "mle_probability": 0.38,
+          "bayesian_probability": 0.37037037037037035
+        },
+        {
+          "category": "цвет одежды",
+          "value": "зеленый",
+          "count": 8,
+          "prior_probability": 0.125,
+          "mle_probability": 0.16,
+          "bayesian_probability": 0.15517241379310345
+        }
+      ],
+      "mle_probability": 0.0059068416,
+      "mle_probability_scientific": "5.906842e-3",
+      "mle_log_probability": -5.131644006659043,
+      "bayesian_probability": 0.004688037595615584,
+      "bayesian_probability_scientific": "4.688038e-3",
+      "bayesian_log_probability": -5.362741207197009,
+      "bayesian_model": "dirichlet_posterior_predictive",
+      "alpha": 1.0
+    },
+    {
+      "sampled_style": {
+        "прическа": "длинные прямые",
+        "цвет волос": "серебристо серый",
+        "аксесуар": "нет очков",
+        "одежда": "футболка с круглым вырезом",
+        "цвет одежды": "розовый"
+      },
+      "sampled_categories": [
+        {
+          "category": "прическа",
+          "value": "длинные прямые",
+          "count": 23,
+          "prior_probability": 0.14285714285714285,
+          "mle_probability": 0.46,
+          "bayesian_probability": 0.42105263157894735
+        },
+        {
+          "category": "цвет волос",
+          "value": "серебристо серый",
+          "count": 24,
+          "prior_probability": 0.16666666666666666,
+          "mle_probability": 0.48,
+          "bayesian_probability": 0.44642857142857145
+        },
+        {
+          "category": "аксесуар",
+          "value": "нет очков",
+          "count": 11,
+          "prior_probability": 0.3333333333333333,
+          "mle_probability": 0.22,
+          "bayesian_probability": 0.22641509433962265
+        },
+        {
+          "category": "одежда",
+          "value": "футболка с круглым вырезом",
+          "count": 19,
+          "prior_probability": 0.25,
+          "mle_probability": 0.38,
+          "bayesian_probability": 0.37037037037037035
+        },
+        {
+          "category": "цвет одежды",
+          "value": "розовый",
+          "count": 8,
+          "prior_probability": 0.125,
+          "mle_probability": 0.16,
+          "bayesian_probability": 0.15517241379310345
+        }
+      ],
+      "mle_probability": 0.0029534208,
+      "mle_probability_scientific": "2.953421e-3",
+      "mle_log_probability": -5.824791187218988,
+      "bayesian_probability": 0.0024459326585820427,
+      "bayesian_probability_scientific": "2.445933e-3",
+      "bayesian_log_probability": -6.013328773338158,
+      "bayesian_model": "dirichlet_posterior_predictive",
+      "alpha": 1.0
+    },
+    {
+      "sampled_style": {
+        "прическа": "короткая прямые",
+        "цвет волос": "пастельный розовый",
+        "аксесуар": "солнцезащитные очки",
+        "одежда": "футболка с V-вырезом",
+        "цвет одежды": "красный"
+      },
+      "sampled_categories": [
+        {
+          "category": "прическа",
+          "value": "короткая прямые",
+          "count": 11,
+          "prior_probability": 0.14285714285714285,
+          "mle_probability": 0.22,
+          "bayesian_probability": 0.21052631578947367
+        },
+        {
+          "category": "цвет волос",
+          "value": "пастельный розовый",
+          "count": 3,
+          "prior_probability": 0.16666666666666666,
+          "mle_probability": 0.06,
+          "bayesian_probability": 0.07142857142857142
+        },
+        {
+          "category": "аксесуар",
+          "value": "солнцезащитные очки",
+          "count": 17,
+          "prior_probability": 0.3333333333333333,
+          "mle_probability": 0.34,
+          "bayesian_probability": 0.33962264150943394
+        },
+        {
+          "category": "одежда",
+          "value": "футболка с V-вырезом",
+          "count": 6,
+          "prior_probability": 0.25,
+          "mle_probability": 0.12,
+          "bayesian_probability": 0.12962962962962962
+        },
+        {
+          "category": "цвет одежды",
+          "value": "красный",
+          "count": 7,
+          "prior_probability": 0.125,
+          "mle_probability": 0.14,
+          "bayesian_probability": 0.13793103448275862
+        }
+      ],
+      "mle_probability": 7.539840000000001e-05,
+      "mle_probability_scientific": "7.539840e-5",
+      "mle_log_probability": -9.492724503334665,
+      "bayesian_probability": 9.131481925372963e-05,
+      "bayesian_probability_scientific": "9.131482e-5",
+      "bayesian_log_probability": -9.30119746969331,
+      "bayesian_model": "dirichlet_posterior_predictive",
+      "alpha": 1.0
+    }
+  ]
+}

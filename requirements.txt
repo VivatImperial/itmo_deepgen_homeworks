@@ -1,4 +1,2 @@
-# Add pinned dependencies here as they appear in each homework.
-# Example:
-# torch==2.6.0
-# torchvision==0.21.0
+numpy==2.4.3
+pillow==12.1.1
