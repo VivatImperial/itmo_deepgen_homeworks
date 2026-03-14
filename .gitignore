@@ -1,0 +1,112 @@
+# OS / filesystem
+.DS_Store
+Thumbs.db
+Desktop.ini
+._*
+.Spotlight-V100/
+.Trashes/
+
+# Editor / IDE
+.idea/
+.vscode/
+.fleet/
+*.swp
+*.swo
+*.tmp
+*~
+
+# Cursor local state and private rules
+.cursor/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+.python-version
+.venv/
+venv/
+env/
+ENV/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.pyre/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build / packaging
+build/
+dist/
+site/
+*.egg
+*.egg-info/
+.eggs/
+wheelhouse/
+
+# Logs
+*.log
+logs/
+
+# Environment / secrets
+.env
+.env.*
+*.secret
+*.secrets
+secrets.*
+credentials.json
+
+# Data artifacts
+data/
+datasets/
+artifacts/
+outputs/
+results/
+checkpoints/
+runs/
+wandb/
+mlruns/
+lightning_logs/
+tensorboard/
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.h5
+*.npz
+*.npy
+*.parquet
+*.feather
+*.sqlite
+*.db
+
+# Archives
+*.zip
+*.tar
+*.gz
+*.bz2
+*.xz
+*.7z
+*.rar
+
+# Node / frontend
+node_modules/
+.next/
+.nuxt/
+coverage/
+
+# Misc generated media
+*.mp4
+*.webm
+*.mov
+*.avi
