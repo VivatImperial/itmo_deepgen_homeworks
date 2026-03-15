@@ -110,3 +110,15 @@ coverage/
 *.webm
 *.mov
 *.avi
+
+# Keep lightweight Task 2 artifacts in repo
+!hw_1/task_2/artifacts/
+!hw_1/task_2/artifacts/**/*.md
+!hw_1/task_2/artifacts/**/*.json
+!hw_1/task_2/artifacts/**/*.png
+!hw_1/task_2/artifacts/reconstructions/
+!hw_1/task_2/artifacts/reconstructions/**/*.png
+
+# Still ignore model checkpoints in artifact folders
+hw_1/task_2/artifacts/**/*.pt
+hw_1/task_2/artifacts*/**/*.pt

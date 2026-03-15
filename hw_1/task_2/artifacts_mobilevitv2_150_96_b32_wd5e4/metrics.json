@@ -1,0 +1,373 @@
+{
+  "config": {
+    "image_size": 96,
+    "batch_size": 64,
+    "epochs": 6,
+    "lr": 0.001,
+    "weight_decay": 0.0005,
+    "val_fraction": 0.1,
+    "num_workers": 0,
+    "seed": 42,
+    "train_augment": true,
+    "score_roi": 1.0,
+    "score_mode": "pixel_quantile",
+    "score_param": 0.8,
+    "anomaly_score_mode": "reconstruction",
+    "latent_score_weight": 0.5,
+    "latent_covariance_eps": 0.001,
+    "threshold_mode": "balanced",
+    "proliv_quantile": 0.05,
+    "encoder_name": "mobilevitv2_150.cvnets_in1k",
+    "encoder_out_index": 4,
+    "bottleneck_channels": 32,
+    "decoder_mode": "plain",
+    "freeze_encoder": false,
+    "early_stopping_patience": 2,
+    "early_stopping_min_delta": 0.0001,
+    "denoising_noise_std": 0.0,
+    "denoising_mask_ratio": 0.0
+  },
+  "device": "mps",
+  "encoder": "mobilevitv2_150.cvnets_in1k",
+  "encoder_source": "huggingface_timm",
+  "score_roi": 1.0,
+  "score_mode": "pixel_quantile",
+  "score_param": 0.8,
+  "anomaly_score_mode": "reconstruction",
+  "latent_score_weight": 0.5,
+  "anomaly_score_info": {
+    "mode": "reconstruction"
+  },
+  "train_history": {
+    "train_loss": [
+      0.015408946964097149,
+      0.00275116695787969,
+      0.0021264715531365353,
+      0.001394216461249145,
+      0.0010531788996539693,
+      0.0008577875915175
+    ],
+    "val_loss": [
+      0.0031707451853435487,
+      0.0017620048893149942,
+      0.0009945639794750605,
+      0.0006585810479009524,
+      0.0005242514234851114,
+      0.0004642180010705488
+    ]
+  },
+  "training": {
+    "best_epoch": 6,
+    "best_val_loss": 0.0004642180010705488,
+    "epochs_ran": 6,
+    "stopped_early": false,
+    "early_stopping_patience": 2,
+    "early_stopping_min_delta": 0.0001
+  },
+  "threshold_info": {
+    "threshold": 0.0016013047425076365,
+    "balanced_accuracy": 0.9932532467532468,
+    "threshold_tpr": 0.9935064935064936,
+    "threshold_tnr": 0.993,
+    "mode": "balanced"
+  },
+  "test_metrics": {
+    "accuracy": 0.919082762256194,
+    "tpr": 0.9534883720930233,
+    "tnr": 0.9178717598908595,
+    "tp": 123,
+    "tn": 3364,
+    "fp": 301,
+    "fn": 6
+  },
+  "latent_projection": {
+    "method": "pca",
+    "normal_samples": 1000,
+    "anomaly_samples": 154
+  },
+  "latent_stats": {
+    "covariance_eps": 0.001,
+    "embedding_dim": 32,
+    "train_samples": 9000
+  },
+  "val_score_summary": {
+    "mean": 0.0006190683082677423,
+    "std": 0.00024411471779712797,
+    "min": 0.00030616350704804063,
+    "max": 0.0028408442158252
+  },
+  "proliv_score_summary": {
+    "mean": 0.002204337645648652,
+    "std": 0.000390831525817597,
+    "min": 0.001384315430186689,
+    "max": 0.0036643880885094404
+  },
+  "samples": {
+    "val_examples": [
+      {
+        "name": "47710416-4498-46b2-ab1f-60be64cc199a.jpg",
+        "score": 0.0005602744058705866
+      },
+      {
+        "name": "b909e913-85b9-470b-a59b-716c04fb35c3.jpg",
+        "score": 0.0007580110686831176
+      },
+      {
+        "name": "2ae85b46-d4c4-4040-83db-a7bf830fb9de.jpg",
+        "score": 0.0008605490438640118
+      },
+      {
+        "name": "f9daca02-7ccc-4c5a-9276-1a315c1f516c.jpg",
+        "score": 0.0006707546417601407
+      },
+      {
+        "name": "b52827c7-fc79-487f-9ae7-39a0d71db14b.jpg",
+        "score": 0.0007125258562155068
+      },
+      {
+        "name": "26610615-eb25-43f6-bdbe-b8c822a2685e.jpg",
+        "score": 0.00036924929008819163
+      },
+      {
+        "name": "eca5347b-5fc1-427f-8aed-e1a8aa12abb2.jpg",
+        "score": 0.000553094141650945
+      },
+      {
+        "name": "7920646d-0d95-427c-9382-4a40ca8e3ae2.jpg",
+        "score": 0.0005043713026680052
+      },
+      {
+        "name": "6269b6e6-bd7a-463c-add6-a4fa7c338020.jpg",
+        "score": 0.0008621772867627442
+      },
+      {
+        "name": "1d044788-e6cc-48a8-8a6c-bcd43b536788.jpg",
+        "score": 0.0020330140832811594
+      },
+      {
+        "name": "0fb4fe7f-0b2d-4035-9458-726a1f515574.jpg",
+        "score": 0.0004183816781733185
+      },
+      {
+        "name": "e29e6ec5-a42c-4eb6-8073-a9c13bfe5aa3.jpg",
+        "score": 0.0003631315485108644
+      },
+      {
+        "name": "cbc81a0e-25df-4695-8b86-7f5e44be2c12.jpg",
+        "score": 0.0004269045311957598
+      },
+      {
+        "name": "84fdfe2b-4604-4469-8cc2-56d0c4267b88.jpg",
+        "score": 0.00040558414184488356
+      },
+      {
+        "name": "9e714c59-f7e5-4e1a-8d91-97a88fc1943a.jpg",
+        "score": 0.0005683790077455342
+      },
+      {
+        "name": "df78feba-e2b0-4ffa-92ef-88cb7afd56c2.jpg",
+        "score": 0.0004095750337000936
+      },
+      {
+        "name": "899e18fe-41c7-4e39-96ed-6912874fed33.jpg",
+        "score": 0.0005138228298164904
+      },
+      {
+        "name": "21dc866e-09c3-4347-b8b8-0a14ffe1eb1e.jpg",
+        "score": 0.0005295801092870533
+      },
+      {
+        "name": "a5f4c56e-6ec3-49b0-b77c-980117bc5e2f.jpg",
+        "score": 0.0005394783802330494
+      },
+      {
+        "name": "8d9bd6fd-4206-4cb6-a762-b279bc27491d.jpg",
+        "score": 0.0005549855413846672
+      }
+    ],
+    "proliv_examples": [
+      {
+        "name": "10_CAM_C_01-03-2023_05-39-27-929.jpg",
+        "score": 0.0018573530251160264
+      },
+      {
+        "name": "11_CAM_C_01-03-2023_05-39-18-442.jpg",
+        "score": 0.0022589557338505983
+      },
+      {
+        "name": "11_CAM_C_01-03-2023_05-39-18-723.jpg",
+        "score": 0.0027086243499070406
+      },
+      {
+        "name": "11_CAM_C_01-03-2023_05-39-18-780.jpg",
+        "score": 0.0027086243499070406
+      },
+      {
+        "name": "13_CAM_C_01-03-2023_05-38-58-584.jpg",
+        "score": 0.0025055480655282736
+      },
+      {
+        "name": "13_CAM_C_01-03-2023_05-38-58-858.jpg",
+        "score": 0.0025055480655282736
+      },
+      {
+        "name": "13_CAM_C_01-03-2023_05-38-58-915.jpg",
+        "score": 0.0025055480655282736
+      },
+      {
+        "name": "13_CAM_C_01-03-2023_05-39-29-466.jpg",
+        "score": 0.0017325723310932517
+      },
+      {
+        "name": "13_CAM_C_01-03-2023_05-39-40-989.jpg",
+        "score": 0.0018852204084396362
+      },
+      {
+        "name": "14_CAM_C_01-03-2023_05-39-12-234.jpg",
+        "score": 0.002036214107647538
+      },
+      {
+        "name": "14_CAM_C_01-03-2023_05-39-30-103.jpg",
+        "score": 0.0025087816175073385
+      },
+      {
+        "name": "14_CAM_C_01-03-2023_05-39-30-186.jpg",
+        "score": 0.0025087816175073385
+      },
+      {
+        "name": "14_CAM_C_01-03-2023_05-39-31-649.jpg",
+        "score": 0.0019239418907091022
+      },
+      {
+        "name": "14_CAM_C_01-03-2023_05-39-41-289.jpg",
+        "score": 0.00271484162658453
+      },
+      {
+        "name": "16_CAM_C_01-03-2023_05-39-13-092.jpg",
+        "score": 0.002144766738638282
+      },
+      {
+        "name": "16_CAM_C_01-03-2023_05-39-29-190.jpg",
+        "score": 0.002244801027700305
+      },
+      {
+        "name": "17_CAM_C_01-03-2023_05-39-21-903.jpg",
+        "score": 0.0027237844187766314
+      },
+      {
+        "name": "17_CAM_C_01-03-2023_05-39-28-477.jpg",
+        "score": 0.0021290655713528395
+      },
+      {
+        "name": "17_CAM_C_01-03-2023_05-39-36-251.jpg",
+        "score": 0.0025835807900875807
+      },
+      {
+        "name": "19_CAM_C_01-03-2023_05-39-02-133.jpg",
+        "score": 0.0020243488252162933
+      }
+    ],
+    "test_examples": [
+      {
+        "name": "00250af6-b9a8-4b37-bf88-4a7682c7026f.jpg",
+        "score": 0.0004900466301478446,
+        "label": 0
+      },
+      {
+        "name": "00423bc0-f741-41fe-af72-3d7bc2016a7f.jpg",
+        "score": 0.00048900704132393,
+        "label": 0
+      },
+      {
+        "name": "00442502-489e-4f36-ba63-48c29c38bbf4.jpg",
+        "score": 0.0005020334501750767,
+        "label": 0
+      },
+      {
+        "name": "00494685-2eb2-4a53-b244-53986fcf3e13.jpg",
+        "score": 0.0012618469772860408,
+        "label": 0
+      },
+      {
+        "name": "0054546c-4ffa-408d-8b3d-93fe22844d6d.jpg",
+        "score": 0.0004562143003568053,
+        "label": 0
+      },
+      {
+        "name": "0055ae50-d198-4c82-aaec-54bcd59d465d.jpg",
+        "score": 0.0008570002391934395,
+        "label": 0
+      },
+      {
+        "name": "00572ca3-1db1-4b6f-bc8d-97e331002e52.jpg",
+        "score": 0.0022170129232108593,
+        "label": 0
+      },
+      {
+        "name": "0060561d-9236-4348-b1fd-6710768ebea9.jpg",
+        "score": 0.0012727143475785851,
+        "label": 0
+      },
+      {
+        "name": "006b7fef-34ae-43ce-b656-5f1405c4750c.jpg",
+        "score": 0.004691112786531448,
+        "label": 0
+      },
+      {
+        "name": "0077cf7b-69cc-4803-9645-23d6a75487fb.jpg",
+        "score": 0.0006659441278316081,
+        "label": 0
+      },
+      {
+        "name": "0083ffcb-97d5-4915-b9a3-8f5ea02f0890.jpg",
+        "score": 0.0006314179045148194,
+        "label": 0
+      },
+      {
+        "name": "008bb51f-d93b-4ed2-9254-254de5c84694.jpg",
+        "score": 0.001272703753784299,
+        "label": 0
+      },
+      {
+        "name": "0095bcb3-700a-4b6e-a3b5-667b707f49e3.jpg",
+        "score": 0.002811599522829056,
+        "label": 0
+      },
+      {
+        "name": "00ab4194-98fd-4ebf-9bc6-0f31d862dc3b.jpg",
+        "score": 0.0006545450887642801,
+        "label": 0
+      },
+      {
+        "name": "00bd95dc-4f01-404b-9f59-1f1369eb1e99.jpg",
+        "score": 0.0006176834576763213,
+        "label": 0
+      },
+      {
+        "name": "00e9cce6-a3c3-4a15-8e5d-b1257cb5fd58.jpg",
+        "score": 0.0006592422141693532,
+        "label": 0
+      },
+      {
+        "name": "00f194d6-aee0-4132-9499-36429e34d501.jpg",
+        "score": 0.0007631824701093137,
+        "label": 0
+      },
+      {
+        "name": "00f5fd17-bc04-4c0e-b98c-3faf5c47f1af.jpg",
+        "score": 0.0012117448495700955,
+        "label": 0
+      },
+      {
+        "name": "0103f42f-1116-42dc-a7ac-6d58a980f71c.jpg",
+        "score": 0.0006337171071209013,
+        "label": 0
+      },
+      {
+        "name": "011bb93b-406c-46f4-ba56-5d400c3f2f86.jpg",
+        "score": 0.000590296636801213,
+        "label": 0
+      }
+    ]
+  }
+}

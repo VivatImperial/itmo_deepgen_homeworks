@@ -1,0 +1,214 @@
+[
+  {
+    "kind": "reconstruction",
+    "roi": 0.9,
+    "mode": "topk_mean",
+    "param": 0.2,
+    "tpr": 0.7984496124031008,
+    "tnr": 0.8927694406548431,
+    "acc": 0.8895624670532419,
+    "min_metric": 0.7984496124031008
+  },
+  {
+    "kind": "reconstruction",
+    "roi": 0.9,
+    "mode": "topk_mean",
+    "param": 0.3,
+    "tpr": 0.7984496124031008,
+    "tnr": 0.8927694406548431,
+    "acc": 0.8895624670532419,
+    "min_metric": 0.7984496124031008
+  },
+  {
+    "kind": "reconstruction",
+    "roi": 1.0,
+    "mode": "topk_mean",
+    "param": 0.3,
+    "tpr": 0.7984496124031008,
+    "tnr": 0.8564802182810368,
+    "acc": 0.8545071164997364,
+    "min_metric": 0.7984496124031008
+  },
+  {
+    "kind": "reconstruction",
+    "roi": 1.0,
+    "mode": "topk_mean",
+    "param": 0.2,
+    "tpr": 0.7984496124031008,
+    "tnr": 0.8542974079126876,
+    "acc": 0.8523985239852399,
+    "min_metric": 0.7984496124031008
+  },
+  {
+    "kind": "combined",
+    "weight": 0.8,
+    "roi": 0.9,
+    "mode": "topk_mean",
+    "param": 0.3,
+    "tpr": 0.7984496124031008,
+    "tnr": 0.7934515688949523,
+    "acc": 0.7936215076436479,
+    "min_metric": 0.7934515688949523
+  },
+  {
+    "kind": "reconstruction",
+    "roi": 1.0,
+    "mode": "pixel_quantile",
+    "param": 0.9,
+    "tpr": 0.7906976744186046,
+    "tnr": 0.8502046384720328,
+    "acc": 0.8481813389562467,
+    "min_metric": 0.7906976744186046
+  },
+  {
+    "kind": "combined",
+    "weight": 0.8,
+    "roi": 1.0,
+    "mode": "pixel_quantile",
+    "param": 0.9,
+    "tpr": 0.7906976744186046,
+    "tnr": 0.8319236016371078,
+    "acc": 0.8305218766473379,
+    "min_metric": 0.7906976744186046
+  },
+  {
+    "kind": "combined",
+    "weight": 0.8,
+    "roi": 0.9,
+    "mode": "topk_mean",
+    "param": 0.2,
+    "tpr": 0.7984496124031008,
+    "tnr": 0.7844474761255116,
+    "acc": 0.7849235635213495,
+    "min_metric": 0.7844474761255116
+  },
+  {
+    "kind": "reconstruction",
+    "roi": 0.9,
+    "mode": "pixel_quantile",
+    "param": 0.9,
+    "tpr": 0.7829457364341085,
+    "tnr": 0.8905866302864939,
+    "acc": 0.8869267264101213,
+    "min_metric": 0.7829457364341085
+  },
+  {
+    "kind": "combined",
+    "weight": 0.8,
+    "roi": 0.9,
+    "mode": "pixel_quantile",
+    "param": 0.9,
+    "tpr": 0.7829457364341085,
+    "tnr": 0.8663028649386084,
+    "acc": 0.8634686346863468,
+    "min_metric": 0.7829457364341085
+  },
+  {
+    "kind": "combined",
+    "weight": 0.65,
+    "roi": 0.9,
+    "mode": "pixel_quantile",
+    "param": 0.9,
+    "tpr": 0.7829457364341085,
+    "tnr": 0.7923601637107777,
+    "acc": 0.7920400632577754,
+    "min_metric": 0.7829457364341085
+  },
+  {
+    "kind": "combined",
+    "weight": 0.8,
+    "roi": 0.9,
+    "mode": "pixel_quantile",
+    "param": 0.8,
+    "tpr": 0.7751937984496124,
+    "tnr": 0.8510231923601637,
+    "acc": 0.8484449130205588,
+    "min_metric": 0.7751937984496124
+  },
+  {
+    "kind": "reconstruction",
+    "roi": 0.9,
+    "mode": "pixel_quantile",
+    "param": 0.8,
+    "tpr": 0.7751937984496124,
+    "tnr": 0.8417462482946794,
+    "acc": 0.8394833948339483,
+    "min_metric": 0.7751937984496124
+  },
+  {
+    "kind": "reconstruction",
+    "roi": 1.0,
+    "mode": "pixel_quantile",
+    "param": 0.8,
+    "tpr": 0.7751937984496124,
+    "tnr": 0.7997271487039563,
+    "acc": 0.7988929889298892,
+    "min_metric": 0.7751937984496124
+  },
+  {
+    "kind": "combined",
+    "weight": 0.8,
+    "roi": 1.0,
+    "mode": "pixel_quantile",
+    "param": 0.8,
+    "tpr": 0.7751937984496124,
+    "tnr": 0.792087312414734,
+    "acc": 0.7915129151291513,
+    "min_metric": 0.7751937984496124
+  },
+  {
+    "kind": "combined",
+    "weight": 0.8,
+    "roi": 1.0,
+    "mode": "topk_mean",
+    "param": 0.3,
+    "tpr": 0.7984496124031008,
+    "tnr": 0.7519781718963165,
+    "acc": 0.753558249868213,
+    "min_metric": 0.7519781718963165
+  },
+  {
+    "kind": "combined",
+    "weight": 0.65,
+    "roi": 1.0,
+    "mode": "pixel_quantile",
+    "param": 0.9,
+    "tpr": 0.7906976744186046,
+    "tnr": 0.7495225102319236,
+    "acc": 0.7509225092250923,
+    "min_metric": 0.7495225102319236
+  },
+  {
+    "kind": "combined",
+    "weight": 0.8,
+    "roi": 1.0,
+    "mode": "topk_mean",
+    "param": 0.2,
+    "tpr": 0.7984496124031008,
+    "tnr": 0.7375170532060027,
+    "acc": 0.7395888244596732,
+    "min_metric": 0.7375170532060027
+  },
+  {
+    "kind": "combined",
+    "weight": 0.35,
+    "roi": 0.9,
+    "mode": "topk_mean",
+    "param": 0.3,
+    "tpr": 0.7674418604651163,
+    "tnr": 0.7369713506139154,
+    "acc": 0.7380073800738007,
+    "min_metric": 0.7369713506139154
+  },
+  {
+    "kind": "combined",
+    "weight": 0.35,
+    "roi": 0.9,
+    "mode": "topk_mean",
+    "param": 0.2,
+    "tpr": 0.7674418604651163,
+    "tnr": 0.7361527967257845,
+    "acc": 0.7372166578808645,
+    "min_metric": 0.7361527967257845
+  }
+]
