@@ -1,0 +1,22 @@
+2026-04-29 18:44:26,439 | INFO | starting training | output_dir=hw_2/artifacts/norm_experiments_10ep/batch | epochs=10 | latent_dim=100 | device=mps
+2026-04-29 18:44:26,513 | INFO | epoch 1/10 started
+2026-04-29 18:51:39,510 | INFO | epoch 1/10 completed | iterations=1583 | g_loss=4.606205 | d_loss=0.805323 | D(x)=0.754015 | D(G(z)) before=0.245092 | D(G(z)) after=0.047932 | duration=432.945s
+2026-04-29 18:51:39,511 | INFO | epoch 2/10 started
+2026-04-29 18:57:53,221 | INFO | epoch 2/10 completed | iterations=1583 | g_loss=3.328492 | d_loss=0.775183 | D(x)=0.742608 | D(G(z)) before=0.255434 | D(G(z)) after=0.086396 | duration=373.667s
+2026-04-29 18:57:53,221 | INFO | epoch 3/10 started
+2026-04-29 19:04:27,645 | INFO | epoch 3/10 completed | iterations=1583 | g_loss=2.942712 | d_loss=0.795285 | D(x)=0.732711 | D(G(z)) before=0.265811 | D(G(z)) after=0.112240 | duration=394.371s
+2026-04-29 19:04:27,645 | INFO | epoch 4/10 started
+2026-04-29 19:11:19,617 | INFO | epoch 4/10 completed | iterations=1583 | g_loss=2.796721 | d_loss=0.797738 | D(x)=0.728636 | D(G(z)) before=0.270304 | D(G(z)) after=0.121406 | duration=411.914s
+2026-04-29 19:11:19,617 | INFO | epoch 5/10 started
+2026-04-29 19:18:09,450 | INFO | epoch 5/10 completed | iterations=1583 | g_loss=2.786519 | d_loss=0.780635 | D(x)=0.734107 | D(G(z)) before=0.264928 | D(G(z)) after=0.123010 | duration=409.771s
+2026-04-29 19:18:09,450 | INFO | epoch 6/10 started
+2026-04-29 19:25:06,525 | INFO | epoch 6/10 completed | iterations=1583 | g_loss=2.822003 | d_loss=0.727449 | D(x)=0.749388 | D(G(z)) before=0.249650 | D(G(z)) after=0.119258 | duration=417.011s
+2026-04-29 19:25:06,525 | INFO | epoch 7/10 started
+2026-04-29 19:31:52,476 | INFO | epoch 7/10 completed | iterations=1583 | g_loss=3.056758 | d_loss=0.666497 | D(x)=0.771076 | D(G(z)) before=0.228138 | D(G(z)) after=0.105967 | duration=405.881s
+2026-04-29 19:31:52,477 | INFO | epoch 8/10 started
+2026-04-29 19:38:37,978 | INFO | epoch 8/10 completed | iterations=1583 | g_loss=3.111425 | d_loss=0.639901 | D(x)=0.784080 | D(G(z)) before=0.215266 | D(G(z)) after=0.103567 | duration=405.427s
+2026-04-29 19:38:37,978 | INFO | epoch 9/10 started
+2026-04-29 19:45:32,478 | INFO | epoch 9/10 completed | iterations=1583 | g_loss=3.345005 | d_loss=0.586308 | D(x)=0.804203 | D(G(z)) before=0.195336 | D(G(z)) after=0.090184 | duration=414.420s
+2026-04-29 19:45:32,479 | INFO | epoch 10/10 started
+2026-04-29 19:52:53,476 | INFO | epoch 10/10 completed | iterations=1583 | g_loss=3.590198 | d_loss=0.511068 | D(x)=0.825078 | D(G(z)) before=0.174547 | D(G(z)) after=0.077621 | duration=440.909s
+2026-04-29 19:52:53,476 | INFO | training completed | epochs=10 | iterations=15830

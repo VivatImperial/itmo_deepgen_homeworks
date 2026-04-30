@@ -1,0 +1,18 @@
+{
+  "data_root": "data/celeba",
+  "output_dir": "hw_2/artifacts/norm_experiments_10ep/batch",
+  "norm": "batch",
+  "image_size": 64,
+  "batch_size": 128,
+  "epochs": 10,
+  "latent_dim": 100,
+  "base_channels": 64,
+  "lr": 0.0002,
+  "beta1": 0.5,
+  "workers": 2,
+  "max_items": null,
+  "max_batches": null,
+  "sample_count": 64,
+  "seed": 999,
+  "device": "mps"
+}
