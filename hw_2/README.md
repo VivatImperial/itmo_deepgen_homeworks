@@ -157,17 +157,7 @@ uv run pytest tests/hw_2 -v
 - один шаг обучения и сохранение метрик/артефактов;
 - CLI для одиночного запуска и серии экспериментов.
 
-## Результаты smoke-run
-
-Проверочные запуски выполнены на временном синтетическом `ImageFolder` и на локальном `CelebA` subset.
-
-| Запуск | Статус | Что проверено |
-| :--- | :--- | :--- |
-| `train_gan`, `norm=batch` | успешно | один batch обучения, сохранение `losses.json`, графика, samples и checkpoint |
-| `run_norm_experiments`, `batch instance none` | успешно | одинаковый протокол запуска для трех нормализаций |
-| `train_gan`, `norm=batch`, `device=mps` | успешно | короткое обучение на Apple Silicon GPU |
-
-## Результаты на CelebA
+## Результаты обучения
 
 Основной запуск выполнен на `CelebA` для трех вариантов нормализации в генераторе:
 
@@ -187,6 +177,18 @@ uv run pytest tests/hw_2 -v
 - seed: `999`;
 - output: `hw_2/artifacts/norm_experiments_10ep`.
 
+График loss-функций во время обучения для baseline:
+
+![BatchNorm loss plot](artifacts/norm_experiments_10ep/batch/loss_plot.png)
+
+График метрик на валидационной выборке отдельно не строился, так как в этом GAN-эксперименте нет supervised validation split. Вместо этого во время обучения сохранялись proxy-метрики `D(x)`, `D(G(z)) before` и `D(G(z)) after` в `metrics.csv` и `metrics.json`.
+
+Примеры результата работы сети после 10 эпох:
+
+| Batch Norm | Instance Norm | No Norm |
+| :---: | :---: | :---: |
+| ![BatchNorm samples](artifacts/norm_experiments_10ep/batch/samples_epoch_010.png) | ![InstanceNorm samples](artifacts/norm_experiments_10ep/instance/samples_epoch_010.png) | ![NoNorm samples](artifacts/norm_experiments_10ep/none/samples_epoch_010.png) |
+
 Итоговые метрики последней эпохи:
 
 | Norm | G loss | D loss | D(x) | D(G(z)) after |
@@ -194,6 +196,14 @@ uv run pytest tests/hw_2 -v
 | Batch Norm | `3.5902` | `0.5111` | `0.8251` | `0.0776` |
 | Instance Norm | `4.5959` | `0.3088` | `0.8971` | `0.0421` |
 | No Norm | `8.2661` | `0.1231` | `0.9614` | `0.0060` |
+
+## Эксперименты
+
+Цель эксперимента - проверить, как нормализация в генераторе влияет на сходимость и качество изображений.
+
+Идея эксперимента - оставить одинаковыми архитектуру, датасет и параметры обучения, меняя только тип нормализации: `BatchNorm` как baseline, `InstanceNorm` и вариант без нормализации.
+
+Результаты эксперимента приведены выше: для каждого запуска сохранены графики loss, итоговые метрики и сетки сгенерированных изображений. Сравнение с baseline:
 
 | Аспект | Batch Norm | Instance Norm | No Norm |
 | :--- | :--- | :--- | :--- |
@@ -204,3 +214,13 @@ uv run pytest tests/hw_2 -v
 | Дополнительные заметки | Лучший вариант для итогового решения. | Рабочий вариант для сравнения, но уступает Batch Norm. | Нормализация в генераторе критична для стабильности этого DCGAN-подобного пайплайна. |
 
 Итог: лучшим вариантом в проведенном протоколе оказался `BatchNorm`. `InstanceNorm` дает приемлемые результаты, но визуально уступает и сильнее смещает баланс в пользу дискриминатора. Вариант без нормализации показал выраженный `mode collapse`, поэтому для финальной модели не подходит.
+
+## Результаты smoke-run
+
+Проверочные запуски выполнены на временном синтетическом `ImageFolder` и на локальном `CelebA` subset.
+
+| Запуск | Статус | Что проверено |
+| :--- | :--- | :--- |
+| `train_gan`, `norm=batch` | успешно | один batch обучения, сохранение `losses.json`, графика, samples и checkpoint |
+| `run_norm_experiments`, `batch instance none` | успешно | одинаковый протокол запуска для трех нормализаций |
+| `train_gan`, `norm=batch`, `device=mps` | успешно | короткое обучение на Apple Silicon GPU |
