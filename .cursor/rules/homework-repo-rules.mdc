@@ -1,0 +1,32 @@
+---
+description: Rules for DeepGen homework repository workflow
+alwaysApply: true
+---
+
+# DeepGen Homework Repository Rules
+
+- Use `master` for the base repository state and course-level documentation only.
+- Keep the root `README.md` with the student name `Богодист Всеволод Ярославович` and the course name `DeepGen`.
+- Create a separate branch for each homework in the format `hw_<number>`, for example `hw_1`.
+- In each homework branch, maintain a `README.md` that includes:
+  - the task being solved;
+  - the dataset used, including source, collection method, image count, and image types;
+  - training results and experiment outcomes.
+- For reports with model training, include a concise "training results" block with:
+  - loss plot during training;
+  - validation metrics plot during training, or a short note if validation metrics are not applicable to the task;
+  - 5-10 generated or processed image examples;
+  - final metric values.
+- Include a concise "experiments" block with:
+  - experiment goal;
+  - experiment idea;
+  - results with plots and metrics where applicable;
+  - baseline comparison;
+  - conclusions.
+- Keep `requirements.txt` in the repository root and pin dependency versions when libraries are used.
+- Manage Python dependencies only through `uv` and a local `.venv`.
+- Homework solutions may live as `.py` scripts, `.ipynb` notebooks, or links to `Google Colab` / `Kaggle` in the homework `README.md`.
+- Follow the requested homework structure when implementing tasks.
+- Prefer fail-fast behavior over broad fallbacks: do not mask errors with excessive fallback paths; let invalid assumptions fail loudly.
+- Avoid verbose comments, emojis, and generic AI-style formatting in code and docs.
+- Preserve existing user changes and never remove homework materials unless explicitly asked.
