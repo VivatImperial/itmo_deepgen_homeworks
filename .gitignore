@@ -110,3 +110,16 @@ coverage/
 *.webm
 *.mov
 *.avi
+
+# Local external sources for heavyweight homework checkpoints
+hw_3/vendor/
+
+# HW3 keeps only final report PNGs in git.
+!hw_3/data/
+hw_3/data/*
+!hw_3/data/landmarks/
+!hw_3/data/landmarks/*.json
+!hw_3/artifacts/
+hw_3/artifacts/*
+!hw_3/artifacts/final/
+!hw_3/artifacts/final/*.png

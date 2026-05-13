@@ -1,0 +1,101 @@
+{
+  "notes": "Public Wikimedia Commons portrait set for HW3 experiments. Verify license metadata on the linked file pages before publication.",
+  "images": [
+    {
+      "id": "person_01_barack_obama",
+      "role": "base",
+      "pose": "frontal",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Official_portrait_of_Barack_Obama.jpg",
+      "filename": "person_01_barack_obama.jpg",
+      "source": "Wikimedia Commons: File:Official portrait of Barack Obama.jpg"
+    },
+    {
+      "id": "person_02_jeffrey_epstein",
+      "role": "base",
+      "pose": "frontal",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Epstein_Final_Mugshot.png",
+      "filename": "person_02_jeffrey_epstein.png",
+      "source": "Wikimedia Commons: File:Epstein Final Mugshot.png"
+    },
+    {
+      "id": "person_03_donald_trump",
+      "role": "base",
+      "pose": "frontal",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Donald_Trump_official_portrait.jpg",
+      "filename": "person_03_donald_trump.jpg",
+      "source": "Wikimedia Commons: File:Donald Trump official portrait.jpg"
+    },
+    {
+      "id": "person_04_sean_combs",
+      "role": "base",
+      "pose": "frontal",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/P_Diddy_2000.jpg",
+      "filename": "person_04_sean_combs.jpg",
+      "source": "Wikimedia Commons: File:P Diddy 2000.jpg"
+    },
+    {
+      "id": "person_05_tom_hiddleston",
+      "role": "base",
+      "pose": "turned",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tom_Hiddleston_by_Gage_Skidmore.jpg",
+      "filename": "person_05_tom_hiddleston.jpg",
+      "source": "Wikimedia Commons: File:Tom Hiddleston by Gage Skidmore.jpg"
+    },
+    {
+      "id": "person_06_benedict_cumberbatch",
+      "role": "base",
+      "pose": "turned",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Benedict_Cumberbatch_by_Gage_Skidmore_2.jpg",
+      "filename": "person_06_benedict_cumberbatch.jpg",
+      "source": "Wikimedia Commons: File:Benedict Cumberbatch by Gage Skidmore 2.jpg"
+    },
+    {
+      "id": "style_01_merkel",
+      "role": "style",
+      "pose": "frontal",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Angela_Merkel_Juli_2010_-_3zu4.jpg",
+      "filename": "style_01_merkel.jpg",
+      "source": "Wikimedia Commons: File:Angela Merkel Juli 2010 - 3zu4.jpg"
+    },
+    {
+      "id": "style_02_einstein",
+      "role": "style",
+      "pose": "frontal",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Albert_Einstein_Head.jpg",
+      "filename": "style_02_einstein.jpg",
+      "source": "Wikimedia Commons: File:Albert Einstein Head.jpg"
+    },
+    {
+      "id": "style_03_malala",
+      "role": "style",
+      "pose": "frontal",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Malala_Yousafzai_2015.jpg",
+      "filename": "style_03_malala.jpg",
+      "source": "Wikimedia Commons: File:Malala Yousafzai 2015.jpg"
+    },
+    {
+      "id": "expression_01_smile",
+      "role": "expression",
+      "pose": "smile",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Emma_Watson_2013.jpg",
+      "filename": "expression_01_smile.jpg",
+      "source": "Wikimedia Commons: File:Emma Watson 2013.jpg"
+    },
+    {
+      "id": "expression_02_open_smile",
+      "role": "expression",
+      "pose": "open_smile",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taylor_Swift_2_-_2019_by_Glenn_Francis.jpg",
+      "filename": "expression_02_open_smile.jpg",
+      "source": "Wikimedia Commons: File:Taylor Swift 2 - 2019 by Glenn Francis.jpg"
+    },
+    {
+      "id": "expression_03_serious",
+      "role": "expression",
+      "pose": "serious",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anne_Hathaway_2013.jpg",
+      "filename": "expression_03_serious.jpg",
+      "source": "Wikimedia Commons: File:Anne Hathaway 2013.jpg"
+    }
+  ]
+}
