@@ -15,6 +15,10 @@ Desktop.ini
 *.tmp
 *~
 
+# Local git worktrees
+.worktrees/
+worktrees/
+
 # Cursor local state and private rules
 .cursor/
 
