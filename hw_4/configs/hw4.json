@@ -1,0 +1,18 @@
+{
+  "base_model": "runwayml/stable-diffusion-v1-5",
+  "controlnet_model": "lllyasviel/sd-controlnet-canny",
+  "subject_token": "sks",
+  "class_name": "person",
+  "instance_prompt": "a photo of sks person face",
+  "class_prompt": "a photo of a person face",
+  "resolution": 512,
+  "seed": 42,
+  "lora_ranks": [4, 8, 16],
+  "comparison_prompts": [
+    "a photo of sks person face in a city, natural light, realistic",
+    "a photo of sks person face on a beach, realistic",
+    "a photo of sks person face in a desert, realistic",
+    "a photo of sks person face on the moon, realistic",
+    "a photo of sks person face in a studio portrait, realistic"
+  ]
+}

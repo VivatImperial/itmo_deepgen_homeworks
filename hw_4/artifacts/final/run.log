@@ -1,0 +1,2 @@
+HW4 local smoke verification completed. Heavy DreamBooth/LoRA training is expected on CUDA.
+Dry-run commands were executed for class image generation, UNet training, LoRA training, inference, and ControlNet.

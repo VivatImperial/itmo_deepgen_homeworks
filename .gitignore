@@ -15,6 +15,10 @@ Desktop.ini
 *.tmp
 *~
 
+# Local git worktrees
+.worktrees/
+worktrees/
+
 # Cursor local state and private rules
 .cursor/
 
@@ -110,3 +114,16 @@ coverage/
 *.webm
 *.mov
 *.avi
+
+# HW4 heavyweight local assets
+hw_4/vendor/
+hw_4/checkpoints/
+hw_4/data/
+hw_4/artifacts/
+!hw_4/artifacts/
+hw_4/artifacts/*
+!hw_4/artifacts/final/
+!hw_4/artifacts/final/*.png
+!hw_4/artifacts/final/*.json
+!hw_4/artifacts/final/*.md
+!hw_4/artifacts/final/*.log

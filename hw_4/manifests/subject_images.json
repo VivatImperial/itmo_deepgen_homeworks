@@ -1,0 +1,111 @@
+{
+  "subject": "Barack Obama",
+  "collection_method": "Public portrait images from Wikimedia Commons. Images are downloaded by URL and cropped locally by the preprocessing script.",
+  "images": [
+    {
+      "id": "obama_01",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/President_Barack_Obama.jpg",
+      "source": "Wikimedia Commons, official White House portrait",
+      "caption": "a photo of sks person face",
+      "crop_box": [240, 80, 760, 600]
+    },
+    {
+      "id": "obama_02",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Obama_portrait_2006.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [160, 60, 620, 520]
+    },
+    {
+      "id": "obama_03",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Barack_Obama_2012.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [170, 60, 650, 540]
+    },
+    {
+      "id": "obama_04",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Barack_Obama_2016.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [150, 40, 650, 540]
+    },
+    {
+      "id": "obama_05",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Barack_Obama_speaks_at_a_campaign_event_in_Las_Vegas.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [420, 80, 920, 580]
+    },
+    {
+      "id": "obama_06",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Barack_Obama_at_White_House.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [280, 70, 780, 570]
+    },
+    {
+      "id": "obama_07",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Barack_Obama_in_2013.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [180, 40, 680, 540]
+    },
+    {
+      "id": "obama_08",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Obama_2010.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [160, 40, 660, 540]
+    },
+    {
+      "id": "obama_09",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Barack_Obama_2008.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [170, 50, 670, 550]
+    },
+    {
+      "id": "obama_10",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Barack_Obama_2011.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [170, 40, 670, 540]
+    },
+    {
+      "id": "obama_11",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Obama_2009.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [160, 50, 660, 550]
+    },
+    {
+      "id": "obama_12",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Barack_Obama_in_the_Oval_Office.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [280, 60, 780, 560]
+    },
+    {
+      "id": "obama_13",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Obama_delivers_a_statement.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [360, 70, 860, 570]
+    },
+    {
+      "id": "obama_14",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Obama_addresses_the_nation.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [330, 60, 830, 560]
+    },
+    {
+      "id": "obama_15",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/President_Obama_speaks_at_the_White_House.jpg",
+      "source": "Wikimedia Commons",
+      "caption": "a photo of sks person face",
+      "crop_box": [320, 60, 820, 560]
+    }
+  ]
+}
