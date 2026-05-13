@@ -52,3 +52,5 @@
 uv sync
 uv run python -m hw_1.task_1.src.generate_examples --count 5 --seed 42
 ```
+
+Скрипт выводит краткие человекочитаемые логи. Для более подробного вывода можно добавить `--verbose`, для тихого режима - `--quiet`.

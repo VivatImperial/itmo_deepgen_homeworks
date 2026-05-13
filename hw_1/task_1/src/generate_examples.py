@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 from pathlib import Path
 from typing import Any
 
@@ -9,6 +10,21 @@ from PIL import ImageFilter
 
 from hw_1.task_1.src.avatar_generator import AvatarGenerator
 from hw_1.task_1.src.style_generator import StyleGenerator
+
+
+def configure_logging(*, verbose: bool, quiet: bool) -> None:
+    if quiet:
+        level = logging.WARNING
+    elif verbose:
+        level = logging.DEBUG
+    else:
+        level = logging.INFO
+    logging.basicConfig(
+        level=level,
+        format="%(asctime)s | %(levelname)s | %(message)s",
+        datefmt="%H:%M:%S",
+    )
+    logging.getLogger("PIL").setLevel(logging.WARNING)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -20,6 +36,8 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         default=Path(__file__).resolve().parents[1] / "generated",
     )
+    parser.add_argument("--quiet", action="store_true", help="Show only warnings and errors.")
+    parser.add_argument("--verbose", action="store_true", help="Enable debug logging.")
     return parser
 
 
@@ -61,17 +79,23 @@ def save_markdown(path: Path, styles_payload: list[dict[str, Any]], avatars_payl
 
 def main() -> None:
     args = build_parser().parse_args()
+    configure_logging(verbose=args.verbose, quiet=args.quiet)
     output_dir = args.output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
     task_root = Path(__file__).resolve().parents[1]
     avatar_dir = task_root / "avatars"
+    logging.info("Generating %d examples with seed=%d", args.count, args.seed)
+    logging.info("Output directory: %s", output_dir)
 
     style_generator = StyleGenerator(seed=args.seed)
+    logging.info("Sampling style examples")
     style_samples = style_generator.sample_many(args.count)
 
     avatar_generator = AvatarGenerator(seed=args.seed)
+    logging.info("Loading source avatars from %s", avatar_dir)
     avatar_generator.fit(avatar_dir)
+    logging.info("Loaded %d source avatars", len(avatar_generator.source_files))
     avatar_samples = []
 
     for index, (image, metadata) in enumerate(avatar_generator.sample_many(args.count), start=1):
@@ -84,6 +108,7 @@ def main() -> None:
             **metadata,
         }
         avatar_samples.append(sample_metadata)
+        logging.info("Saved generated avatar %d to %s", index, image_path)
 
     save_json(
         output_dir / "styles.json",
@@ -102,6 +127,7 @@ def main() -> None:
         },
     )
     save_markdown(output_dir / "report.md", style_samples, avatar_samples)
+    logging.info("Saved styles.json, avatars.json and report.md")
 
 
 if __name__ == "__main__":

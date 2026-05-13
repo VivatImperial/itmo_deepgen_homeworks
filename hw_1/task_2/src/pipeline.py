@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import logging
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
@@ -17,6 +18,21 @@ from tqdm import tqdm
 
 from hw_1.task_2.src.data import DatasetSplit, ImageDataset, LabeledImageDataset, load_task2_splits
 from hw_1.task_2.src.model import MobileNetV3Autoencoder
+
+
+def configure_logging(*, verbose: bool, quiet: bool) -> None:
+    if quiet:
+        level = logging.WARNING
+    elif verbose:
+        level = logging.DEBUG
+    else:
+        level = logging.INFO
+    logging.basicConfig(
+        level=level,
+        format="%(asctime)s | %(levelname)s | %(message)s",
+        datefmt="%H:%M:%S",
+    )
+    logging.getLogger("PIL").setLevel(logging.WARNING)
 
 
 @dataclass(slots=True)
@@ -119,6 +135,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--proliv-quantile", type=float, default=0.05)
     parser.add_argument("--disable-train-augment", action="store_true")
+    parser.add_argument("--quiet", action="store_true", help="Show only warnings and errors.")
+    parser.add_argument("--verbose", action="store_true", help="Enable debug logging.")
     return parser.parse_args()
 
 
@@ -647,6 +665,8 @@ def train_model(
     val_loader: DataLoader,
     config: TrainConfig,
     device: torch.device,
+    *,
+    show_progress: bool = True,
 ) -> dict[str, object]:
     optimizer = torch.optim.AdamW(model.parameters(), lr=config.lr, weight_decay=config.weight_decay)
     criterion = nn.MSELoss()
@@ -661,7 +681,7 @@ def train_model(
     for epoch in range(1, config.epochs + 1):
         model.train()
         train_losses: list[float] = []
-        progress = tqdm(train_loader, desc=f"epoch {epoch}/{config.epochs}", leave=False)
+        progress = tqdm(train_loader, desc=f"epoch {epoch}/{config.epochs}", leave=False, disable=not show_progress)
         for images, _paths in progress:
             images = images.to(device)
             targets = prepare_model_inputs(images, config, training=True)
@@ -686,9 +706,11 @@ def train_model(
 
         history["train_loss"].append(float(np.mean(train_losses)))
         history["val_loss"].append(float(np.mean(val_losses)))
-        print(
-            f"epoch={epoch} train_loss={history['train_loss'][-1]:.6f} "
-            f"val_loss={history['val_loss'][-1]:.6f}"
+        logging.info(
+            "epoch=%d train_loss=%.6f val_loss=%.6f",
+            epoch,
+            history["train_loss"][-1],
+            history["val_loss"][-1],
         )
 
         current_val_loss = history["val_loss"][-1]
@@ -704,9 +726,11 @@ def train_model(
             epochs_without_improvement += 1
             if epochs_without_improvement >= config.early_stopping_patience:
                 stopped_early = True
-                print(
-                    f"early_stopping epoch={epoch} best_epoch={best_epoch} "
-                    f"best_val_loss={best_val_loss:.6f}"
+                logging.info(
+                    "early_stopping epoch=%d best_epoch=%d best_val_loss=%.6f",
+                    epoch,
+                    best_epoch,
+                    best_val_loss,
                 )
                 break
 
@@ -746,6 +770,7 @@ def encoder_source_name(encoder_name: str) -> str:
 
 def main() -> None:
     args = parse_args()
+    configure_logging(verbose=args.verbose, quiet=args.quiet)
     config = TrainConfig(
         image_size=args.image_size,
         batch_size=args.batch_size,
@@ -784,16 +809,31 @@ def main() -> None:
     set_seed(config.seed)
     output_dir = args.output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
+    logging.info("Starting task 2 pipeline")
+    logging.info("Dataset root: %s", args.dataset_root)
+    logging.info("Output directory: %s", output_dir)
 
     split = load_task2_splits(args.dataset_root, val_fraction=config.val_fraction, seed=config.seed)
     loaders = make_dataloaders(split, config)
     device = detect_device()
-    print(f"device={device}")
-    print(
-        f"train_normal={len(split.train_normal)} val_normal={len(split.val_normal)} "
-        f"proliv={len(split.proliv)} test={len(split.test_samples)}"
+    logging.info("device=%s", device)
+    logging.info(
+        "train_normal=%d val_normal=%d proliv=%d test=%d",
+        len(split.train_normal),
+        len(split.val_normal),
+        len(split.proliv),
+        len(split.test_samples),
+    )
+    logging.info(
+        "encoder=%s decoder=%s image_size=%d batch_size=%d epochs=%d",
+        config.encoder_name,
+        config.decoder_mode,
+        config.image_size,
+        config.batch_size,
+        config.epochs,
     )
 
+    logging.info("Building model")
     model = MobileNetV3Autoencoder(
         encoder_name=config.encoder_name,
         encoder_out_index=config.encoder_out_index,
@@ -802,8 +842,10 @@ def main() -> None:
         freeze_encoder=config.freeze_encoder,
         decoder_mode=config.decoder_mode,
     ).to(device)
-    training_result = train_model(model, loaders["train"], loaders["val"], config, device)
+    logging.info("Training autoencoder")
+    training_result = train_model(model, loaders["train"], loaders["val"], config, device, show_progress=not args.quiet)
 
+    logging.info("Scoring validation, proliv and test splits")
     val_recon_scores, val_names = reconstruction_scores(
         model, loaders["val"], device, config.score_roi, config.score_mode, config.score_param, config
     )
@@ -839,9 +881,18 @@ def main() -> None:
     else:
         threshold_info = choose_threshold_balanced(val_scores, proliv_scores)
     test_metrics = evaluate_test(test_scores, test_labels, threshold_info["threshold"])
+    logging.info(
+        "threshold=%.8f mode=%s test_accuracy=%.4f test_tpr=%.4f test_tnr=%.4f",
+        threshold_info["threshold"],
+        threshold_info["mode"],
+        test_metrics["accuracy"],
+        test_metrics["tpr"],
+        test_metrics["tnr"],
+    )
 
     checkpoint_name = config.encoder_name.replace(".", "_").replace("/", "_")
     model_path = output_dir / f"{checkpoint_name}_autoencoder.pt"
+    logging.info("Saving model checkpoint to %s", model_path)
     torch.save(
         {
             "model_state_dict": model.state_dict(),
@@ -864,6 +915,7 @@ def main() -> None:
     save_histogram(val_scores, proliv_scores, threshold_info["threshold"], output_dir / "score_histogram.png")
     save_latent_projection(val_embeddings, proliv_embeddings, output_dir / "latent_space.png")
     save_examples(model, loaders["val"], device, output_dir / "reconstructions", config)
+    logging.info("Saved plots and reconstruction examples")
 
     metrics = {
         "config": asdict(config),
@@ -975,6 +1027,7 @@ def main() -> None:
         "- `reconstructions/`",
     ]
     (output_dir / "summary.md").write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
+    logging.info("Saved metrics.json and summary.md")
 
 
 if __name__ == "__main__":

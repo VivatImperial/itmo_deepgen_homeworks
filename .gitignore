@@ -17,6 +17,9 @@ Desktop.ini
 
 # Cursor local state and private rules
 .cursor/
+!.cursor/
+!.cursor/rules/
+!.cursor/rules/*.mdc
 
 # Python
 __pycache__/
